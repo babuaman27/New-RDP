@@ -52,11 +52,11 @@ jobs:
           echo /_,// //\  
 
           # Replace with your actual script logic here (avoid storing sensitive data directly)
-          echo https://t.me/TheDisala4U/57
+          echo https://t.me/TheDisala4U/571
 
           # Example usage of EMAIL_SECRET environment variable (assuming it's a valid email address)
           echo "Retrieved email address from secret: $Env:EMAIL_SECRET"
           "@
 
-          Write-Output $scriptContent
+          # Removed the Write-Output line that was causing the error
           ./down.bat
