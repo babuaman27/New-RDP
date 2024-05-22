@@ -1,4 +1,4 @@
-name: GetScreen Windows (6H)
+name: GetScreen Windows (Improved)
 
 on:
   workflow_dispatch:
@@ -8,11 +8,55 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Downloading & Setting Up
-        run: |
-         echo "EMAIL_SECRET=rajababuaman27@gmail.com" > secrets.txt
-         Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fi/gdzoens68gz1o4wuwtf0x/down.bat?rlkey=wd1ecn33dv9yn2uvdyynavbs6&dl=1" -OutFile "down.bat"
-         cmd /c down.bat
+      - name: Downloading & Setting Up (placeholder)
+        # This step is no longer needed since we're not downloading the script
 
-      - name: Time Counter
-        run: python time.py
+      - name: Run PowerShell Script with Secrets
+        run: |
+          # Assuming EMAIL_SECRET is a secret environment variable
+          echo "$Env:EMAIL_SECRET=your_actual_email@example.com" > secrets.txt
+
+      - name: Run down.bat Script
+        run: |
+          # Actual content of the down.bat script (replace with your actual content)
+          $scriptContent = @"
+          @echo off
+
+          echo  /$$$$$$$                                    /$$                           /$$
+          echo | $$__  $$                                  | $$                          | $$
+          echo | $$  \ $$  /$$$$$$  /$$  /$$  /$$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$   /$$$$$$$
+          echo | $$  | $$ /$$__  $$| $$ | $$ | $$| $$__  $$| $$ /$$__  $$ |____  $$ /$$__  $$
+          echo | $$  | $$| $$  \ $$| $$ | $$ | $$| $$  | $$| $$| $$  \ $$  /$$$$$$$| $$  | $$
+          echo | $$  | $$| $$  | $$| $$ | $$ | $$| $$  | $$| $$| $$  | $$ /$$__  $$| $$  | $$
+          echo | $$$$$$$/|  $$$$$$/|  $$$$$/$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$|  $$$$$$$
+          echo |_______/  \______/  \_____/\___/ |__/  |__/|__/ \______/  \_______/ \_______/
+
+          echo       ___           ___           ___     
+          echo      /\  \         /\__\         /\  \    
+          echo      \:\  \       /:/ _/_       _\:\  \   
+          echo       \:\  \     /:/ /\__\     /\ \:\  \  
+          echo   _____\:\  \   /:/ /:/ _/_   _\:\ \:\  \ 
+          echo  /::::::::\__\ /:/_/:/ /\__\ /\ \:\ \:\__\
+          echo  \:\~~\~~\/__/ \:\/:/ /:/  / \:\ \:\/:/  /
+          echo   \:\  \        \::/_/:/  /   \:\ \::/  / 
+          echo    \:\  \        \:\/:/  /     \:\/:/  /  
+          echo     \:\__\        \::/  /       \::/  /   
+          echo      \/__/         \/__/         \/__/  
+
+          echo  ____ ____ ____ ____ ____ ____ ____ ____ 
+          echo ||W |||o |||r |||k |||f |||l |||o |||w ||
+          echo ||__|||__|||__|||__|||__|||__|||__|||__||
+          echo |/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
+         
+          echo  /  ._  /_
+          echo /_,// //\  
+
+          # Replace with your actual script logic here (avoid storing sensitive data directly)
+          echo https://t.me/TheDisala4U/57
+
+          # Example usage of EMAIL_SECRET environment variable (assuming it's a valid email address)
+          echo "Retrieved email address from secret: $Env:EMAIL_SECRET"
+          "@
+
+          Write-Output $scriptContent
+          ./down.bat
